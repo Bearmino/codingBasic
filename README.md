@@ -1,2 +1,3 @@
 # codingBasic
-coding practice
+
+Hi. I'm W
