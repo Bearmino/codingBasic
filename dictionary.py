@@ -36,5 +36,13 @@ print(grade['peny'])
 print(grade['donut'])
 
 #딕셔너리 만들 때 주의사항
-a={1:'a',1:'b'}
+a={1:'a',1:'b',1:'c'}
 print(a)
+'''이렇게 key값이 중복될 경우에는 어떤 key값을 불러와야는지 알 수 없기에, 최종(key:value)값을 제외한 값은 무시한다 '''
+
+#딕셔너리 관련 함수
+a={'name':'peny','phone':'011052547','birth':'1125'}
+print(a.keys())
+'''a.keys()는 딕셔너리 a의 key만을 모아서 dict_keys라는 객체를 돌려준다'''
+for k in a.keys():
+    print(k)
