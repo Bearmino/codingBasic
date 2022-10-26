@@ -35,4 +35,6 @@ grade = {'peny':10,'donut':20,'mali':30}
 print(grade['peny'])
 print(grade['donut'])
 
-
+#딕셔너리 만들 때 주의사항
+a={1:'a',1:'b'}
+print(a)
