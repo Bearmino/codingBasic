@@ -43,6 +43,30 @@ print(a)
 #딕셔너리 관련 함수
 a={'name':'peny','phone':'011052547','birth':'1125'}
 print(a.keys())
-'''a.keys()는 딕셔너리 a의 key만을 모아서 dict_keys라는 객체를 돌려준다'''
+'''a.keys()는 딕셔너리 a의 key만을 모아서 dict_keys라는 객체를 반환'''
 for k in a.keys():
     print(k)
+'''dict_keys객체를 리스트로 변환 시 list 함수 사용'''
+print(list(a.keys()))
+
+'''a.value()는 딕셔너리 a의 value값만을 모아서 dict_value라는 객체를 반환'''
+print(a.values())
+
+'''key,value를 쌍으로 dict_items이라는 객체를 반환'''
+print(a.items())
+
+'''key로 value값 얻기'''
+print(a.get('name'))
+print(a.get('phone'))
+
+'''존재하지 않는 키(nokey)로 접근하였을때에 none이라는 거짓이라는 뜻을 반환'''
+print(a.get('nokey'))
+
+'''해당 key가 딕셔너리 안에 있는 조사는 value값 in 딕셔너리 객체로 확인 가능'''
+print('name' in a)
+print('pix' in a)
+
+'''key,value값 모두 지우기'''
+a.clear()
+print(a)
+
