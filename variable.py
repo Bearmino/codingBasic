@@ -10,8 +10,23 @@ a=[1,2,3]
 print(id(a))
 '''id함수는 변수가 가르키고 있는 객체의 주소값을 나타내는 내장함수이다. '''
 
-#리스트를 복사하고자 할때
+print()
 
+#리스트를 복사하고자 할때 함수
+'''[:]를 이용'''
+a=[4,5,6]
+b=a[:]
+print(a)
+print(b)
+
+'''copy모듈 이용'''
+from copy import copy
+a=[7,8,9]
+b=copy(a)
+print(a)
+print(b)
+
+#하기처럼 리스트를 이용한 복사 시 주의사항
 a=[1,2,3]
 b=a
 print(b)
@@ -26,3 +41,20 @@ print(id(b))
 print(a is b)
 '''is 내장함수를 통해서도 같은 객체인지를 확인할 수 있다.'''
 
+#변수를 만드는 여러가지 방법
+
+a,b =('phthon','life')
+print(a,b)
+
+(a,b)='phthon','life'
+print(a,b)
+
+a=b='phthon'
+print(a,b)
+
+#두 변수를 바꾸는 방법
+
+a=3
+b=5
+a,b=b,a
+print(a,b)
