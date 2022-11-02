@@ -41,9 +41,9 @@ while money:
 
 '''IDLE에서의 실제 실습 환경 반영해보기'''
 #coffee.py
-
+"""
 coffee = 10
-while True
+    while True
     money = int(input("돈을 넣어주세요:"))
     if money == 300:
         print("커피를 줍니다.")
@@ -57,3 +57,18 @@ while True
     if coffee == 0:
         print("커피가 다 떨어졌습니다.판매를 중지합니다.")
     break
+"""
+
+#while문의 맨 처음으로 돌아가기
+a=0
+while a<10:
+    a = a+1
+    if a%2 == 0: continue
+    print(a)
+
+#무한루프
+'''
+    while True:
+        <수행할 문장1>
+        <수행할 문장2>
+'''
