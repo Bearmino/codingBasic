@@ -30,3 +30,54 @@ x or y : x와 y 둘중에 하나만 참이어도 참이다.
 x and y : x와 y 모두 참이어야 참이다.
 not x : x가 거짓이면 참이다.
 '''
+'''EX) 돈이 3000원 이상 있거나 카드가 있다면 택시를 타고 그렇지 않으면 걸어가라'''
+money = 2000
+card = True
+if money >=3000 or card:
+    print("택시를 타고 가라")
+else:
+    print("걸어가라")
+
+# x in s, x not in s
+'''다른 프로그래밍 언어에서는 쉽게 볼 수 없는 재미있는 조건문을 제공한다.'''
+print(1 in [1,2,3])
+print(1 not in [1,2,3])
+print('a' in ('a','b','c'))
+print('a' not in ('a','b','c'))
+
+'''EX) 만약 주머니에 돈이 있다면 택시를 타고, 없으면 걸어가라'''
+pocket = ['paper','cellphone','money']
+if 'money' in pocket:
+   print("택시를 타고 가라1")
+else:
+   print("걸어가라")
+
+#조건문에서 아무 일도 하지 않게 설정하고 싶다면??
+'''해당 경우에는 pass를 사용하도록 하자'''
+'''EX) 주머니에 돈이 있으면 가만히 있고, 돈이 없으면 카드를 꺼내라'''
+pocket = ["money","card"]
+if 'money' in pocket:
+    pass
+else:
+    print("카드를 꺼내라")
+
+#다양한 조건을 판단하는 elIf
+pocket = ['paper','handphone']
+card = True
+if 'money' in pocket:
+    print("택시를 타고 가라2")
+elif card:
+    print("택시를 타고 가라3")
+else:
+    print("걸어가라")
+
+#조건부 표현식
+score = 10
+if score >= 60:
+    message = print("success")
+else:
+    message = print("failure")
+'''위 코드를 파이썬의 조건 표현식으로 하면'''
+
+message = "success1" if score >= 60 else "failure2"
+print(message)
