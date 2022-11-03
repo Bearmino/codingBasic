@@ -5,7 +5,7 @@ b=False
 
 print(type(a))
 print(type(b))
-'''type(x)는 x의 자료형을 확인하는 파이썬의 내장 함수'''
+'''type(x)는 x의 자료형을 확인 하는 파이썬의 내장 함수'''
 
 print(1==1)
 print(2>1)
