@@ -1,4 +1,4 @@
-#문자열로 표현
+#문자열로 표현 방법
 
 print("Hello world")
 print('Hello world')
