@@ -65,6 +65,7 @@ for number in range(len(marks)):
 #for와 range를 이용한 구구단
 for i in range(2,10):
     for j in range(1,10):
-            print(i*j,end=" ")
+            print(i*j, end=" ")
     else:
         print(' ' )
+'''print(i*j, end=" ") end를 넣어준 이유는 결과값에 대한 출력시 다른 줄로 이행 되지않고 해당 줄에서 계속 출력될 수 있게 하려고 함'''
