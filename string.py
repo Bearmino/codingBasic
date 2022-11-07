@@ -73,9 +73,143 @@ a="Life is too short, You need Phyton"
 print(a[-1])
 """-1은 뒤에서부터 세어서 첫번째가 되는 문자를 말한다."""
 
-#문자열 슬라이싱
+#문자열 슬라이싱 및 활용
 a="Life is too short, You need Phyton"
 print(a[0:4])
 """a[0:4]가 뜻하는 것은 a 문자열의 0부터 4까지의 문자를 뽑아낸다는 뜻이다."""
+print(a[0:5])
+"""해당 부분에서는 공백도 포함하기에 공백부분까지 출력된다."""
+print(a[19:])
+"""끝부분을 삭제하면, 시작부분부터 문자의 끝까지를 출력한다."""
+print(a[:17])
+"""시작부분을 삭제하면, 처음부터 끝번호까지를 출력한다."""
+print(a[:])
+"""전체 문자열이 출력된다."""
+print(a[19:-7])
+"""a[19:-7]이 뜻하는 것은 a[19]에서부터 a[-8]까지를 말한다."""
 
-#
+#슬라이싱 활용하기
+a="20010331Rainy"
+year = a[:4]
+date = a[4:8]
+weather = a[8:]
+print(year)
+print(date)
+print(weather)
+
+#ex)Pithon이라는 문자열을 Python으로 변경하려면?
+a="Pithon"
+print(a[:1]+'y'+a[2:])
+
+#문자열 포매팅
+"""1. 숫자 바로 대입"""
+a = "I eat %d apples." % 3
+print(a)
+'''문자열에 숫자를 넣고 싶은 자리에 %d문자를 넣어주고, 문장 가장 뒤에 삽입할 숫자를 % 뒤에 넣음 '''
+'''%d는 문자열 포맷 코드라고 부른다.'''
+
+"""2. 문자열 바로 대입"""
+a = "I eat %s apples." % "five"
+print(a)
+'''문자열에 숫자 대신 문자열을 넣음'''
+
+"""3. 숫자 값을 나타내는 변수로 대입"""
+number =5
+a= "I eat %d apples." % number
+print(a)
+'''변수를 통해서 대입'''
+
+"""4. 2개 이상의 값 넣기"""
+number = 10
+day = "three"
+a = "I ate %d apples.\nso I was sick for %s days" % (number,day)
+print(a)
+
+#문자열 포맷 코드
+"""
+%s 문자열(String)
+%c 문자 1개(Character)
+%d 정수(Integer)
+%f 부동소수(Floating-point)
+%o 8진수
+%x 16진수
+%% Literal (문자 %자체)
+"""
+
+#문자열 포맷 코드 이용
+"""1. 정렬과 공백"""
+a= "%10s" % "hi"
+print(a)
+'''오른쪽 정열로 10칸을 공백으로 채운 다음 문자열 표시'''
+
+a="%-10sJane" % "hi"
+print(a)
+'''위와는 반대로 왼쪽 정렬로 10칸을 채운 후 문자열 표시  '''
+
+"""2. 소수점 표현하기"""
+a="%0.4f" % 3.421341
+print(a)
+'''3.421341를 소수점 4번째 자리까지만 나타내고 싶은 경우/ .의 경우에는 소수점 포인트이며 4는 소수점 뒤에 나올 갯수'''
+
+#format 함수를 사용한 포매팅
+"""format 함수를 사용하면 좀 더 발전된 문자열 포맷이 가능하다."""
+
+"""1. 숫자 바로 대입하기"""
+a="I eat {0} apples".format(3)
+print(a)
+
+"""2. 문자열 바로 대입하기"""
+a="I eat {0} apples".format("five")
+print(a)
+
+"""3. 숫자 값을 가진 변수로 대입하기"""
+number=3
+a="I eat {0} apples".format(number)
+print(a)
+
+"""4. 2개 이상의 값 넣기"""
+number=10
+day="three"
+a="I ate {0} apples.\nso I was sick for {1} days".format(number,day)
+print(a)
+a="I ate {number} apples.\nso I was sick for {day} days".format(number=10,day="three")
+print(a)
+'''위의 예제처럼 {0},{1}과 같은 인덱스 항목 대신 더 편리하게 {name}형태로 사용하는 방법도 있다.'''
+
+"""5. 인덱스와 이름을 혼용해서 사용"""
+a="I ate {0} apples.\nso sick for {day} days".format(5,day=10)
+print(a)
+
+"""왼쪽 정렬"""
+a="{0:<10}".format("hi")
+print(a)
+'''오른쪽 정렬은 반대로 하면 된다.'''
+a="{0:>10}".format("hi")
+print(a)
+
+"""가운데 정렬"""
+a="{0:^10}".format("hi")
+print(a)
+
+"""공백 채우기"""
+a="{0:=^10}".format("hi")
+print(a)
+a="{0:!<10}".format("hi")
+print(a)
+
+"""소수점 표현하기"""
+y=3.42134234
+a="{0:0.4f}".format(y)
+print(a)
+
+"""{ 또는 } 문자 표현하기"""
+a="{{ and }}".format()
+print(a)
+
+#f 문자열 포매팅(가장 중요!!)
+"""파이선 3.6버전부터 사용 가능하다."""
+"""문자열 앞에 f접두사를 붙이면 f문자열 포매팅 기능을 사용할 수 있다."""
+name = '홍길동'
+age = 30
+a=f'나의 이름은 {name}입니다.나이는 {age}입니다.'
+print(a)
