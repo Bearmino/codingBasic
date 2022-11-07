@@ -14,6 +14,14 @@ f=0o177
 g=0x8ff
 print(f,g)
 
+#사칙연산
+a=3
+b=4
+print(a+b)
+print(b-a)
+print(a*b)
+print(a/b)
+
 #x의 y제곱을 나타내는 **연산자
 h=3
 i=4
