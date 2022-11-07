@@ -2,7 +2,6 @@
 #딕셔너리는 Key와 Value를 한쌍으로 갖는 자료형
 #ex) Key가 basebalss이라면 Value는 야구가 될 것이다.
 
-
 #딕셔너리의 예제
 dic ={'name':'peny','phone':'0110525424','birth':'1118'}
 print(dic)
