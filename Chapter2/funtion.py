@@ -14,5 +14,34 @@ print(c)
 
 #매개변수와 인수
 def add(a,b): #a,b는 매개변수
-    return a+b  
+    return a+b
 print(add(3,4)) #3,4는 인수
+
+#일반적인 함수
+def add(a,b):
+    result = a+b
+    return result
+
+a=add(3,4)
+print(a)
+
+#입력값이 없는 함수
+def say():
+    return 'Hi'
+print(say())
+
+#결과값이 없는 함수
+def add(a,b):
+    print("%d,%d의 합은 %d입니다."% (a,b,a+b))
+a=add(3,4)
+print(a)
+'''print문은 출력을 담당하는 요소 중 하나에 해당될 뿐 결과값은 아니다.'''
+'''return 명령어만이 결과값으로 될 수 있다.'''
+
+
+#입력값도 결과값도 없는 함수
+def say():
+    print('Hi')
+
+
+
