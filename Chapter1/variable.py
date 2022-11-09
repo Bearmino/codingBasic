@@ -43,13 +43,13 @@ print(a is b)
 
 #변수를 만드는 여러가지 방법
 
-a,b =('phthon','life')
+a,b =('python','life')
 print(a,b)
 
-(a,b)='phthon','life'
+(a,b)='python','life'
 print(a,b)
 
-a=b='phthon'
+a=b='python'
 print(a,b)
 
 #두 변수를 바꾸는 방법
