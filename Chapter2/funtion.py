@@ -45,4 +45,47 @@ say()
 '''인수를 받는 매개변수도 없고, return값도 존재하지 않기에 입력값도 결과값도 존재하지 않느다.'''
 '''해당 함수의 출력 방법은 함수이름으로밖에 없다.'''
 
+#매개변수 지정하여 호출하기
+def add(a,b):
+    return a+b
 
+result=add(a=3,b=7)
+print(result)
+
+result=add(a=5,b=8)
+print(result)
+"""매개변수를 지정하면 순서와 상관없이 사용이 가능하다는 장점이 있다."""
+
+#여러 개의 입력값을 받는 함수 만들기
+"""
+def 함수(*매개변수):
+    <수행할 문장>
+"""
+def add_money(*args):
+    result=0
+    for i in args:
+        result = result + i
+    return result
+"""args는 임의로 정한 변수이름이다. 아무 이름이나 써도 된다."""
+result = add_money(1,2,3,4,5)
+print(result)
+
+result = add_money(1,2,3,4,5,6,7,8,9,10)
+print(result)
+
+def add_mul(choice,*args):
+    if choice =="add":
+        result = 0
+        for i in args:
+            result += i
+    elif choice == "mul":
+        result = 1
+        for i in args:
+            result *= i
+    return result
+
+result=add_mul('add',1,2,3,4,5)
+print(result)
+
+result=add_mul('mul',10,20,30,40)
+print(result)
