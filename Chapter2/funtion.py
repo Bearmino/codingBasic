@@ -73,6 +73,7 @@ print(result)
 result = add_money(1,2,3,4,5,6,7,8,9,10)
 print(result)
 
+"""여러개의 입력 처리 시 매개변수로만 사용할 수 있는 것은 아니다."""
 def add_mul(choice,*args):
     if choice =="add":
         result = 0
@@ -89,3 +90,4 @@ print(result)
 
 result=add_mul('mul',10,20,30,40,50)
 print(result)
+'''매개변수 choice에 'add'가 입력된 경우, *args에 입력되는 모든 값을 더해주고,'mul'이 입력된 경우 elif의 *args의 모든 값을 곱한다.'''
