@@ -87,5 +87,5 @@ def add_mul(choice,*args):
 result=add_mul('add',1,2,3,4,5)
 print(result)
 
-result=add_mul('mul',10,20,30,40)
+result=add_mul('mul',10,20,30,40,50)
 print(result)
