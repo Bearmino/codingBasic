@@ -91,3 +91,17 @@ print(result)
 result=add_mul('mul',10,20,30,40,50)
 print(result)
 '''매개변수 choice에 'add'가 입력된 경우, *args에 입력되는 모든 값을 더해주고,'mul'이 입력된 경우 elif의 *args의 모든 값을 곱한다.'''
+
+#키워드 파라미터 kwargs
+"""키워드 파라미터를 사용시에는 매개변수 앞에 별 두개(**)를 붙인다."""
+
+def print_kwargs(**kwargs):
+    print(kwargs)
+
+print_kwargs(a=1)
+'''{'a':1}'''
+print_kwargs(name='foo',age=3)
+'''{'name':'foo','age':3}'''
+"""입력한 값들이 모두 딕셔너리로 만들어져서 출력된다는 것을 확인할 수 있다."""
+"""매개변수 앞에 **을 붙이면 매개변수 kargs는 모든 딕셔너리가 되고 모든 key=value형태의 결과값 출력한다."""
+'''kwargs는 keyword arguments의 약자로, args와 마찬가지로 관례적으로 사용한다.'''
