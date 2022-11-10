@@ -116,3 +116,77 @@ print(result)
 
 result1, result2 = add_and_mul(3,4)
 print("result1 =",result1,"result2=",result2)
+
+"""return의 다른 쓰임새"""
+def say_nick(nick):
+    if nick == "바보":
+        return
+    print("나의 별명은 %s 입니다"% nick)
+
+say_nick("멍충이")
+say_nick("바보")
+'''위에서 보면 say_nick이라는 함수를 지정하였으며, 반환값은 없다. 그렇기에, 만약에 입력값이 '바보'라는 값이 
+들어오면 문자열을 출력하지 않고 함수를 즉시 빠져 나간다.'''
+
+#매개변수에 초기값을 미리 설정하기
+"""다른 형태로 함수의 인수를 전달하는 방법"""
+def say_myself(name, old, man=True):
+    print("나의 이름은 %s 입니다"% name)
+    print("나이는 %d살 입니다."% old)
+    if man:
+        print("남자입니다.")
+    else:
+        print("여자입니다.")
+
+print(say_myself("신동석",40,True))
+print(say_myself("오민식",39,False))
+'''위 함수를 보면 매개변수가 name, old, man=True 3개이다. 그 중 man=True처럼 매개변수에
+미리 값을 넣어 주어서 매개변수 초기값을 설정할 수 있다.'''
+'''출력값을 보면 Flase에서는 여자입니다라고 출력이 된다.'''
+'''(중요!) 초기화 시킬 매개변수는 항상 맨 뒤로 놓아야 한다.'''
+
+#함수 안에서 선언한 변수의 효력 범위
+a=1
+def vartest(a):
+    a=a+1
+vartest(a)
+print(a)
+'''vartest함수에서 매개변수 a의 값에 1을 더했으니까 2가 출력될거 같지만, 결과값은 1이 나온다.'''
+'''이처럼 나온 이유는 함수 안에서 새로 만든 매개변수는 함수안에서만 사용하는 "함수만의 변수"이다.'''
+
+def vartest(z):
+    z=z+1
+vartest(3)
+'''print(z) 에러발생 '''
+'''에러가 발생하는 이유는 vartest(3)을 수행하면 해당 함수에서의 값이 4가 나오지만 '''
+'''함수 호출이 끝난뒤의 print(z)의 경우에는 z라는 변수를 찾을 수가 없기에 에러 발생'''
+
+#함수 안에서 함수 밖의 변수를 변경하는 방법
+"""1. return 사용하기"""
+a=1
+def vartest(a):
+    a=a+1
+    return a
+a=vartest(a)
+print(a)
+'''return을 활용하여 vartest함수의 입력으로 들어온 값의 1을 더한값을 돌려준다.'''
+'''따라서 a=vartest(a)라고 하면 vartest(a)의 바뀐 결과값이 들어온다.'''
+
+"""2. global 명령어 사용하기"""
+a=1
+def vartest():
+    global a
+    a=a+1
+vartest()
+print(a)
+'''global 명령어를 사용하여서 global a문장은 함수 안에서 함수 밖의 a변수를 직접 사용하겠다는 뜻이다.'''
+
+#lambda
+"""lambda(람다)는 함수를 생성할 때 사용하는 예야어로 def와 동일한 역활을 한다."""
+"""보통 함수를 한줄로 간결하게 만들 때 사용한다."""
+
+add = lambda a,b: a+b
+result=add(3,4)
+print(result)
+
+'''lambda 예약어로 만든 함수는 return 명령어가 없어도 결과값을 돌려준다.'''
