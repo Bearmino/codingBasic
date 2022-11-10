@@ -1,4 +1,4 @@
-#coffee
+#coffee 예제
 coffee = 10
 while True:
     money = int(input("돈을 넣어주세요:"))

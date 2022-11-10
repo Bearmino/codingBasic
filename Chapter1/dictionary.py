@@ -1,4 +1,4 @@
-#딕셔너리(또는 해시(hash))란\
+#딕셔너리(또는 해시(hash))란?
 #딕셔너리는 Key와 Value를 한쌍으로 갖는 자료형
 #ex) Key가 basebalss이라면 Value는 야구가 될 것이다.
 

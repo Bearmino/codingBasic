@@ -53,7 +53,6 @@ a=b='python'
 print(a,b)
 
 #두 변수를 바꾸는 방법
-
 a=3
 b=5
 a,b=b,a

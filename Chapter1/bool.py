@@ -1,5 +1,5 @@
 #불(bool) 자료형이란 참(true)과 거짓(false)을 나타내기 위한 자료형이다.
-#True,False는 예약어로 앞에는 대문자로 시작
+#True,False는 예약어로 앞에는 대문자로 시작한다.
 a=True
 b=False
 
