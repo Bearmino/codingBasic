@@ -105,3 +105,14 @@ print_kwargs(name='foo',age=3)
 """입력한 값들이 모두 딕셔너리로 만들어져서 출력된다는 것을 확인할 수 있다."""
 """매개변수 앞에 **을 붙이면 매개변수 kargs는 모든 딕셔너리가 되고 모든 key=value형태의 결과값 출력한다."""
 '''kwargs는 keyword arguments의 약자로, args와 마찬가지로 관례적으로 사용한다.'''
+
+#함수의 결과값은 언제나 하나다.
+def add_and_mul(a,b):
+    return a+b,a*b
+
+result = add_and_mul(3,4)
+print(result)
+'''add_and_mul함수의 결과값은 a+b와 a*b로 튜플값이 하나인 (a+b,a*b)로 돌려준다.'''
+
+result1, result2 = add_and_mul(3,4)
+print("result1 =",result1,"result2=",result2)
