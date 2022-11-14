@@ -16,3 +16,19 @@ f.close()
 #파일 경로와 슬래시(/)
 """파이썬 코드에서 파일 경로를 표시할 때 슬래시(/)를 사용하며, 만약 역슬래시(\)를 사용시에는 역슬래시 2개(\\)하거나
 문자열 앞에 r문자(Raw String)을 덧붙여 사용하면 좋다."""
+
+#파일을 쓰기 모드로 열어 출력값 적기
+f=open("c:/doit/새파일.txt",'w')
+for i in range(1,11):
+    data="%d번째 줄입니다.\n" %  i
+    f.write(data)
+f.close()
+
+#프로그램 외부에 저장된 파일을 읽는 다양한 방법
+
+"""1. readline 함수 이용"""
+f=open("c:/doit/새파일.txt",'r')
+line = f.readline()
+print(line)
+f.close()
+'''f.open("새파일.txt",'r')로 파일을 읽기 모드로 연 후 readline()을 사용 후 첫 번째 줄을 읽음'''
