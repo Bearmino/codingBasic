@@ -25,7 +25,6 @@ for i in range(1,11):
 f.close()
 
 #프로그램 외부에 저장된 파일을 읽는 다양한 방법
-
 """1. readline 함수 이용"""
 f=open("c:/doit/새파일.txt",'r')
 line = f.readline()
@@ -76,3 +75,4 @@ import sys
 args = sys.argv[1:]
 for i in args:
     print(i.upper(),end='')
+
