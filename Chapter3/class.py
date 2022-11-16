@@ -46,4 +46,41 @@ print(cal2.add(3))
 print(cal2.add(7))
 
 #클래스와 객체
-"""   """
+"""과자를 만든다고 생각을 해보자.
+과자 틀 → 클래스(Class)
+과자틀에 의해 만든 과자 → 객체(Object)
+
+즉, 클래스(class)란 똑같은 무엇인가를 계속해서 만들어 낼 수 있는 설계도면과 같고,
+객체(object)란 클래스로 만든 피조물을 뜻한다.
+
+클래스로 만든 객체들은 서로 영향을 주지 않는다.
+"""
+
+class Cookie:
+    pass #pass는 아무것도 수행하지 않는 문법으로 임시로 코드 작성시 사용
+a= Cookie()
+b= Cookie()
+"""클래스로 만든 객체(a,b)를 cookie클래스의 인스턴스라고 한다."""
+
+#사칙연산 클래스 만들기
+"""1. 클래스 구조 만들기"""
+# class FourCal:
+    # pass
+# a=FourCal()
+# print(type(a))
+'''type을 통해서 객체 a가 FourCal클래스의 인스턴스임을 알 수 있다.'''
+
+"""2. 객체에 숫자 지정 만들기"""
+class FourCal:
+    def setdata(self,first,second):
+        self.first = first
+        self.second = second
+
+a=FourCal()
+a.setdata(4,2)
+
+print(a.first,a.second)
+
+
+
+
