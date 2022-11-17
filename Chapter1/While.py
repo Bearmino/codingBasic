@@ -1,10 +1,10 @@
 #while문
-'''반복해서 문장을 수행해야 할 경우 while문을 사용, 반복문이라고도 부른다.'''
-'''while <조건문>
-    <수행할 문장1>
-    <수행할 문장2>
-    <수행할 문장3>
-'''
+# 반복해서 문장을 수행해야 할 경우 while문을 사용, 반복문이라고도 부른다.
+# while <조건문>
+#     <수행할 문장1>
+#     <수행할 문장2>
+#     <수행할 문장3>
+#
 treeHits=0
 while treeHits <10:
     treeHits = treeHits + 1
@@ -27,7 +27,7 @@ while number !=4:
     number = int(input())
 
 #while문 강제로 빠져 나오기
-'''EX)자판기를 예시로 설명'''
+# EX)자판기를 예시로 설명
 coffe = 10
 money = 300
 while money:
@@ -37,9 +37,9 @@ while money:
     if coffe == 0:
         print("커피가 다 떨어져서, 판매를 중지합니다.")
     break
-'''해당 소스는 money가 300으로 고정되어 있으므로, 항상 참으로 끝의 break가 없으면 무한 루프가 진행된다.'''
+# 해당 소스는 money가 300으로 고정되어 있으므로, 항상 참으로 끝의 break가 없으면 무한 루프가 진행된다.
 
-'''IDLE에서의 실제 실습 환경 반영 해보기'''
+# IDLE에서의 실제 실습 환경 반영 해보기
 #coffee.py
 """
 coffee = 10
