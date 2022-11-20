@@ -108,7 +108,7 @@ print(b.first == a.first)
     # def add(self):
     #     result = self.first + self.second
     #     return result
-# add 메서드의 매개변수는 self이고, 반환값은 result이다.
+# add 메서드의 매개변수는 self이고, 반환값은 result이다.!!
 print(a.add())
 # a.add()와 같이 a 객체에 의해 add메서드가 수행되면서 add메서드의 self에는 객체 a가 자동으로 입력됨
 print(a.mul())
