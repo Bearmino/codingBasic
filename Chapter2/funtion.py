@@ -36,7 +36,7 @@ def add(a,b):
 a=add(3,4)
 print(a) # return이 아니다.
 # print문은 출력을 담당하는 요소 중 하나에 해당될 뿐 결과값은 아니다.
-# return 명령어만이 결과값으로 될 수 있다.
+# return 명령어만이 결과값으s로 될 수 있다.
 
 #입력값도 결과값도 없는 함수
 def say():
