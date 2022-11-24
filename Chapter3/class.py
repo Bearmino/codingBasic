@@ -60,7 +60,7 @@ class Cookie:
     pass #pass는 아무것도 수행하지 않는 문법으로 임시로 코드 작성시 사용
 a= Cookie()
 b= Cookie()
-# 클래스로 만든 객체(a,b)를 cookie클래스의 인스턴스라고 한다.
+# 클래스로 만든 객체 a,b를 cookie클래스의 인스턴스라고 한다.
 
 #사칙연산 클래스 만들기
 

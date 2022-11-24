@@ -33,3 +33,24 @@ class SafeFourCal(FourCal):
 
 a = SafeFourCal(4,0)
 print(a.div())
+
+#클래스 변수
+#객체변수는 다른 객체들의 영향을 받지 않고 독립적으로 그 값을 유지하지만 클래스 변수는 객체 변수와 성격이 다르다.
+#클래스이름.클래스변수로 이용할 수 있다.
+
+class Family:
+    lastname = "박"
+
+print(Family.lastname)
+a=Family()
+b=Family()
+
+print(a.lastname)
+print(b.lastname)
+# 클래스 변수 값을 변경하면, 클래스로 만든 객체의 변수도 모두 동일하게 변경된다.
+# 클래스 변수와 동일한 이름의 객체 변수를 생성하면??
+a.lastname="최"
+print(a.lastname)
+print(b.lastname)
+# 클래스의 변수가 바뀌는 것이 아닌 a객체에 lastname이라는 객체변수가 새롭게 생성된다.
+# 객체변수는 클래스변수와 동일한 이름으로 생성할 수 있다.
