@@ -34,17 +34,5 @@ print(b.add())
 # __init__인 생성자 메서드를 사용시에는 setdata와는 다르게 생성자의 매개변수를
 # class 선언 후 바로 전달 되어야 한다.
 
-class Text :
-    def __init__(self,name,text):
-        self.name = name
-        self.text = text
-    def babo(self):
-        print("%s는 %s입니다." % (self.name,self.text) )
-    def sarang(self):
-        print("%s는 나의 %s입니다."% (self.name,self.text))
 
-a=Text("홍재","바보")
-b=Text("승주","사랑")
 
-a.babo()
-b.sarang()
