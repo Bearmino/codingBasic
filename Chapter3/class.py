@@ -18,15 +18,15 @@ def add(num):
     global result1
     result1+=num
     return result1
-def add(num):
+def add2(num):
     global result2
     result2+=num
     return result2
 
 print(add(3))
 print(add(4))
-print(add(5))
-print(add(6))
+print(add2(5))
+print(add2(6))
 
 # Class를 활용한 메소드 활용
 class Calculator:
@@ -116,4 +116,6 @@ print(a.sub())
 print(a.div())
 print(a.mul())
 
-
+b=FourCal()
+b.setdata(3,4)
+print(b.add())
