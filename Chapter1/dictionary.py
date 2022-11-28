@@ -46,7 +46,7 @@ for k in a.keys():
     print(k)
 
 # a.keys()는 딕셔너리 a의 key만을 모아서 dict_keys라는 객체를 반환
-print(list(a.keys()),"dict_keys객체를 리스트로 변환")
+print(list(a.keys()),"a를 리스트로 변환(파이썬 3.6부터 적용)")
 
 #a.value()는 딕셔너리 a의 value값만을 모아서 dict_value라는 객체를 반환
 print(a.values())
@@ -58,7 +58,7 @@ print(a.items())
 print(a.get('name'))
 print(a.get('phone'))
 
-#존재하지 않는 키(nokey)로 접근하였을때에 none이라는 거짓이라는 뜻을 반환
+#존재하지 않는 키(nokey)로 접근하였을때에 'none'이라는 거짓이라는 뜻을 반환
 print(a.get('nokey'))
 
 #해당 key가 딕셔너리 안에 있는 조사는 value값 in 딕셔너리 객체로 확인 가능

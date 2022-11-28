@@ -21,8 +21,8 @@ for(first,last) in a:
 #for문 응용
 #EX) 총 5명의 학생이 시험을 보았으며, 시험점수가 60점을 넘기면 "합격" 그렇지 않으면 "불합격"이다. '''
 marks = [90,25,35,80,70]
-
 number=0
+
 for mark in marks:
     number+=1
     if mark >=60:
