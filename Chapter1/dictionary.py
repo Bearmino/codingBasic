@@ -40,13 +40,13 @@ print(a)
 
 #딕셔너리 관련 함수
 a={'name':'peny','phone':'011052547','birth':'1125'}
-print(a.keys())
-#a.keys()는 딕셔너리 a의 key만을 모아서 dict_keys라는 객체를 반환
 
+#dict_keys객체를 리스트로 변환 시 list 함수 사용
 for k in a.keys():
     print(k)
-#dict_keys객체를 리스트로 변환 시 list 함수 사용
-print(list(a.keys()))
+
+# a.keys()는 딕셔너리 a의 key만을 모아서 dict_keys라는 객체를 반환
+print(list(a.keys()),"dict_keys객체를 리스트로 변환")
 
 #a.value()는 딕셔너리 a의 value값만을 모아서 dict_value라는 객체를 반환
 print(a.values())
