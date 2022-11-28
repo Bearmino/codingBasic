@@ -37,7 +37,7 @@ number = 0
 for mark in marks:
     number+=1
     if mark<60:
-        continue
+        continue #해당문은 for문의 맨 처음으로 돌아간다.
     else:
         print("%d번째 학생 합격을 축하합니다."% number)
 
@@ -59,7 +59,7 @@ for number in range(len(marks)):
         continue
     else:
         print("%d번 학생은 합격을 축하드립니다." % (number+1))
-#len함수는 리스트 안ㄴ의 요소 갯수를 돌려주는 함수로, .len(marks)는 5가 될 것이고, range(len(marks)는 range(5)다
+#len함수는 리스트 안의 요소 갯수를 돌려주는 함수로, .len(marks)는 5가 될 것이고, range(len(marks)는 range(5)다
 
 #for와 range를 이용한 구구단
 for i in range(2,10):
@@ -68,3 +68,18 @@ for i in range(2,10):
     else:
         print(' ' )
 #print(i*j, end=" ") end를 넣어준 이유는 결과값에 대한 출력시 다른 줄로 이행 되지않고 해당 줄에서 계속 출력될 수 있게 하려고 함
+
+#다음 리스트에 대한 컴프리헨션 사용하기
+a=[1,2,3,4]
+result=[]
+for num in a:
+    result.append(num*3)
+print(result) # 기존의 정형화된 for문 사용법
+
+result=[num*3 for num in a] # 리스트 컴프리헨션 사용
+print(result)
+
+#만약 [1,2,3,4]중에 짝수에만 3을 곱하고 싶다면..
+result=[num*3 for num in a if num % 2 == 0]
+print(result)
+
