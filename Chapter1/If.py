@@ -77,7 +77,7 @@ if score >= 60:
     message = print("success!")
 else:
     message = print("failure!")
-# 위 코드를 파이썬의 조건 표현식으로 하면
 
-message = "success1" if score >= 60 else "failure2"
+# 위 코드를 파이썬의 조건 표현식으로 하면
+message = "success1" if score >= 60 else "failure2!"
 print(message)
