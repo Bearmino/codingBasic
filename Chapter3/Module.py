@@ -10,6 +10,9 @@ def add(a,b):
 def sub(a,b):
     return a-b
 
+print(add(4,2))
+print(sub(5,2))
+
 #해당 모듈을 c:\doit이라는 폴더를 만든 후 해당 위치로 저장
 #윈도우 프롬프트를 통해서, 작성한 mod1.py파일에 대해 실행하여 본다.
 #1. cd c:\doit으로 해당 폴더로 이동
@@ -35,3 +38,9 @@ def sub(a,b):
 
 #from 모듈 import *
 # >>> from mod1 import * (mod1의 모든함수 사용)
+
+#if_name_=="_main_":의 의미
+# 다양한 함수들을 담고 있는 특정 파일이 import되어 함수도 제공해주지만 파일 그 자체가 실행도 되어 사용되어야 할때 사용함
+
+
+
