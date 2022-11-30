@@ -31,7 +31,7 @@ class SafeFourCal(FourCal):
         else:
             return self.first / self.second
 
-a = SafeFourCal(4,0)
+a = SafeFourCal(4,2)
 print(a.div())
 
 #클래스 변수
