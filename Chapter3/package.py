@@ -66,6 +66,20 @@
 #__init__.py 파일은 해당 디렉터리가 패키지의 일부임을 알려주는 역할을 한다.
 #python3.3버전부터는 __init__.py파일이 없어도 패키지로 인식을 하지만, 하위 호환을 위해 생성하는 것이 안전하다.
 
+#[relative 패키지]
+#만약 graphic 디렉터리의 render.py모듈이 sound 디렉터리의 echo.py모듈을 사용하고 싶다면.
+# #render.py을 수정
+# from game.sound.echo import echo_test
+# def render_test():
+#   print("render")
+
+#echo_test를 추가하여 echo_test함수를 사용할 수 있도록 수정하였다.
+#>>>from game.graphic.render import echo_test
+#>>>render_test()
+#render
+#echo
+
+
 
 
 
