@@ -79,8 +79,19 @@
 #render
 #echo
 
+#위의 예제처럼 from game.sound.echo import echo_test를 입력해 전체 경로를 사용도 가능하지만,
+#realative하게 import 사용도 가능하다.
 
+# #render.py
+# from..sound.echo import echo_test
+# def render_test():
+#   print("render")
+#   echo_test()
 
+# .. 은 render.py파일의 부모 디렉터리를 의미한다. 따라서 render.py파일의 부모 디렉터리는 game이므로 위처럼 import가 가능
+
+# .. -> 부모 디렉터리
+# .  -> 현재 디렉터리
 
 
 
