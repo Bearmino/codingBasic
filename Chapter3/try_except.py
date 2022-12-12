@@ -137,3 +137,5 @@ eagle.fly()
 
 #>>> raise NotImplementedError
 #>>>NotImplementedError
+# Eagle클래스는 Bird 클래스를 상속 받았다. 그러나 Eagle클래스는 fly메서드를 오버라이딩하여 구현되지 않음
+# 따라서, eagle객체의 fly메서드를 수행하는 순간 Bird클래스의 fly메서드가 수행되어 NotimplementedError가 발생
