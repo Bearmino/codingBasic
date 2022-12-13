@@ -1,6 +1,7 @@
 # 오류는 어떤 때 발생하는가?
 # 프로그램을 만들다 보면 수없이 많은 오류를 만나지만, 오류가 발생하는 이유는 프로그램이 잘못 동작되는 것을 막는 행위이기도 하다.
 # 오타를 입력했을 때에 발생하는 구문 오류를 제외한 오류에 대해 살펴보자.
+from Chapter1.String import say
 
 #[존재하지 않는 파일을 사용하려고 시도할때 발생하는 오류] : FileNotFoundError
 # >>>f = open("나없는파일",'r')
@@ -129,13 +130,58 @@ class Bird:
     def fly(self):
         raise NotImplementedError
 
+# class Eagle(Bird):
+#     pass
+#
+# eagle = Eagle()
+# eagle.fly()
+#>>> raise NotImplementedError
+#>>> NotImplementedError
+# Eagle클래스는 Bird 클래스를 상속 받았다. 그러나 Eagle클래스는 fly메서드를 오버라이딩하여 구현되지 않음
+# 따라서, eagle객체의 fly메서드를 수행하는 순간 Bird클래스의 fly메서드가 수행되어 NotImplementedError가 발생
+
 class Eagle(Bird):
+    def fly(self):
+        print("I'm fly")
+
+eagle2 = Eagle()
+eagle2.fly()
+#NotImplementedError가 발생되지 않도록, 함수를 구현해줘야한다.(오버라이딩)
+
+#예외 만들기
+# 프로그램 수행 도중 특수한 경우에만, 예외 처리를 하기 위해서 종종 예외를 만들어 사용한다.
+# 예외는 다음과 같이 python 내장 클래스인 Exception클래스를 상속하여 만들 수 있다.
+class MyError(Exception):
     pass
 
-eagle = Eagle()
-eagle.fly()
+def say_nick(nick):
+    if nick=="바보":
+        raise MyError()
+    print(nick)
 
-#>>> raise NotImplementedError
-#>>>NotImplementedError
-# Eagle클래스는 Bird 클래스를 상속 받았다. 그러나 Eagle클래스는 fly메서드를 오버라이딩하여 구현되지 않음
-# 따라서, eagle객체의 fly메서드를 수행하는 순간 Bird클래스의 fly메서드가 수행되어 NotimplementedError가 발생
+say_nick("천재")
+#say_nick("바보")
+# say_nick("바보")에서 MyError가 발생한다. 해당 부분을 예외처리 해보자.
+
+try:
+    say_nick("천재")
+    say_nick("바보")
+except MyError:
+    print("허용되지 않는 별명입니다.")
+
+# 만약 오류 메시지를 사용하고 싶다면, 다음처럼 예외 처리를 해주면된다.
+
+class MyError(Exception):
+    def __str__(self):
+        return "허용되지 않는 오류입니다."
+
+def say_nick(nick):
+    if nick=="바보":
+        raise MyError()
+    print(nick)
+
+try:
+    say_nick("천재")
+    say_nick("바보")
+except MyError as e:
+    print(e)
