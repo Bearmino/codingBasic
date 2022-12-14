@@ -156,3 +156,24 @@ num_list=[3,15,2,20,40,7]
 max_num = functools.reduce(lambda x,y: x if x>y else y, num_list)
 print(max_num)
 
+#operator.itemgetter
+# sorted와 같은 함수의 key 매개변수에 적용하여 다양한 기준으로 정렬할 수 있도록 도와주는 모듈이다.
+from operator import itemgetter
+students = [
+    ("jane",22,'A'),
+    ("dave",32,'B'),
+    ("sally",17,'C'),
+]
+result = sorted(students,key=itemgetter(1))
+print(result)
+#>>>[('sally', 17, 'C'), ('jane', 22, 'A'), ('dave', 32, 'B')]
+#itemgetter(1)은 students(튜플)의 2번째 요소를 기준으로 정렬하겠다는 의미이다.
+
+students = [
+    {"name":"jane","age":22,"grade":'A'},
+    {"name": "dave", "age": 32,"grade": 'B'},
+    {"name": "sally", "age": 17,"grade": 'C'},
+]
+
+result = sorted(students,key=itemgetter("age"))
+print(result)
