@@ -92,3 +92,67 @@ for i in range(3):
 import math
 a = math.gcd(60,100,80)
 print(a)
+
+#math.lcm
+# math.lcm은 최소공배수를 구할때 사용하는 함수
+import math
+a= math.lcm(20,30)
+print(a)
+
+#random
+# random은 난수(규칙이 없는 임의의 수)를 발생시키는 모듈이다.
+import random
+print(random.random())
+#0.0~1.0사이에서의 난수 값 구하기
+print(random.randint(1,10))
+#1~10사이에서의 난수 값 구하기
+
+#itertools.zip_longest
+# 같은 개수의 자료형을 묶는 파이썬 내장 함수인 zip()과 동일한 동작한다.
+# 하지만, 전달한 반복 가능 객체의 길이가 다르다면 긴 것을 기준으로 빠진 값은 fillvalue에 설정한 값으로 채울 수 있다.
+# 별도의 채우는게 없다면 None을 출력한다.
+import itertools
+
+students = ['한민관','황지민','이영희','이영철','오민식']
+snacks = ['사탕','초콜릿','젤리','새우깡']
+
+result = itertools.zip_longest(students,snacks,fillvalue='초코파이')
+print(list(result))
+#>>> [('한민관', '사탕'), ('황지민', '초콜릿'), ('이영희', '젤리'), ('이영철', '새우깡'), ('오민식', '초코파이')]
+
+#itertools.permutation
+# 반복 가능 객체(iterable)중에서 r개를 선택한 순열을 이터레이터로 리턴하는 함수이다.
+import itertools
+for a,b in itertools.permutations(['1','2','3'],2):
+    print(a+b)
+#>>>12
+#   13
+#   21
+#   23
+#   31
+#   32
+
+#functool.reduce
+# function을 반복 가능한 객체(iterable)의 요소에 차례대로(왼쪽 → 오른쪽)누적 적용하여 객체를 하느이 값으로 줄이는 함수
+def add(data):
+    result = 0
+    for i in data:
+        result+=i
+    return result
+
+data = [1,2,3,4,5]
+result = add(data)
+print(result)
+#>>>15
+
+import functools
+data = [1,2,3,4,5,6]
+result = functools.reduce(lambda x,y: x+y,data)
+print(result)
+#>>>21
+#((((1+2)+3)+4)+5) 람다식 적용방식
+
+num_list=[3,15,2,20,40,7]
+max_num = functools.reduce(lambda x,y: x if x>y else y, num_list)
+print(max_num)
+
