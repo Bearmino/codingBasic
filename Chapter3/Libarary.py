@@ -90,14 +90,14 @@ for i in range(3):
 #math.gcd
 # math.gcd함수를 이용하면 최대공약수를 쉽게 구할 수 있다.(python 3.5버전이상부터)
 import math
-a = math.gcd(60,100,80)
-print(a)
+result = math.gcd(60,100,80)
+print(result)
 
 #math.lcm
 # math.lcm은 최소공배수를 구할때 사용하는 함수
 import math
-a= math.lcm(20,30)
-print(a)
+result = math.lcm(20,30)
+print(result)
 
 #random
 # random은 난수(규칙이 없는 임의의 수)를 발생시키는 모듈이다.
@@ -177,3 +177,62 @@ students = [
 
 result = sorted(students,key=itemgetter("age"))
 print(result)
+#>>>[{'name': 'sally', 'age': 17, 'grade': 'C'}, {'name': 'jane', 'age': 22, 'grade': 'A'},
+# {'name': 'dave', 'age': 32, 'grade': 'B'}]
+#딕셔너리 키인 age를 기준으로 정렬을 진행함
+
+#operator.attrgetter()
+#Student 클래스의 객체라면 다음처럼 attrgetter()를 적용해 정렬해야한다.
+from operator import attrgetter
+class Student:
+    def __init__(self,name,age,grade):
+        self.name = name
+        self.age = age
+        self.grade = grade
+
+students = [
+    Student('Jane',22,'A'),
+    Student('Dany',15,'B'),
+    Student('Wendy',30,'C'),
+]
+result = sorted(students, key=attrgetter('age'))
+print(result)
+
+
+#shutil
+# shutil은 파일을 복사(copy)하거나 이동(move)할 때 사용하는 모듈
+# c:\doit이라는 폴더의 a.txt파일을 a.txt.bak이라는 파일로 복사하는 프로그램을 만들고자 한다면 아래처럼 해주면 된다.
+# import shutil
+# shutil.copy("c:/doit/a.txt","c:/doit/a.txt.bak")
+# shutil.move("c:/doit/a.txt","c:/doit/game/a.txt")
+
+#glob
+# 파일을 읽고 쓰는 기능이 있는 프로그램을 만들다 보면 특정 디렉터리에 있는 파일 이름을 모두 알아야 할 때가 있을 경우 사용하는 모듈
+import glob
+print(glob.glob("c:/doit/foo*"))
+#>>>'c:/doit\\foo.txt', 'c:/doit\\foo2.txt']
+
+#pickle
+# 객체의 형태를 그대로 유지하면서 파일에 저장하고 불러올 수 있게 하는 모듈
+# pickle 모듈의 dump함수를 사용하여 딕셔너리 객체인 data를 그대로 파일에 저장
+import pickle
+f = open("test.txt",'wb')
+data = {1:'python',2:'you need'}
+pickle.dump(data,f)
+f.close()
+# pickle.dump로 저장한 파일을 pckle.load를 사용해서 원래 있던 딕셔너리 객체(data)상태 그대로 불어오는 상황
+import pickle
+f = open("test.txt",'rb')
+data = pickle.load(f)
+print(data)
+
+#os
+# 환경 변수나 디렉터리,파일 등의 os자원을 제어할 수 있도록 해주는 모듈
+#내시스템의 환경 변수값을 알고 싶을 때
+import os
+result = os.environ
+print(result)
+#>>> environ({'ALLUSERSPROFILE': 'C:\\ProgramData', 'APPDATA': 'C:\\Users\\Cloudike\\AppData\\Roaming',
+# 'CLASSPATH': '%JAVA_HOME%\\lib;.....
+
+
