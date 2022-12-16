@@ -9,6 +9,8 @@
 # 년,월,일로 날짜를 표현할 때 사용하는 함수이다.
 #datetime.date는 다음과 같이 객체로 만들 수 있다.
 import datetime
+import zipfile
+
 day1 = datetime.date(2021,12,14)
 day2 = datetime.date(2022,6,12)
 
@@ -235,4 +237,103 @@ print(result)
 #>>> environ({'ALLUSERSPROFILE': 'C:\\ProgramData', 'APPDATA': 'C:\\Users\\Cloudike\\AppData\\Roaming',
 # 'CLASSPATH': '%JAVA_HOME%\\lib;.....
 
+#PATH 환경 변수에 대한 내용
+result = os.environ['PATH']
+print(result)
+#>>> C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;...
 
+#os.chdir
+# 디렉터리 위치 변경하기
+result = os.chdir("C:\windows")
+print(result)
+
+#os.getcwd
+# 디렉터리 위치를 리턴한다.
+result = os.getcwd()
+print(result)
+
+#os.system
+# 시스템 명령어 호출하기
+# 시스템 자체의 프로그램이나 기타 명령어를 파이썬에서 호출할 수 있다.
+os.system("dir")
+
+#os.popen
+# 시스템 명령어를 실행한 결과값을 읽기 모드 형태의 파일 객체로 리턴한다.
+f=os.popen("dir")
+# 읽어 들인 객체의 내용을 보기
+print(f.read())
+
+# os함수	                설명
+# os.mkdir(디렉터리)	| 디렉터리를 생성한다.
+# os.rmdir(디렉터리)	| 디렉터리를 삭제한다.단, 디렉터리가 비어있어야 삭제가 가능하다.
+# os.unlink(파일)	| 파일을 지운다.
+# os.rename(src, dst)	| src라는 이름의 파일을 dst라는 이름으로 바꾼다.
+
+#zipfile
+# 여러개의 파일을 zip형식으로 합치거나 이를 해제할 때 사용하는 모듈
+# import zipfile
+# #파일 합치기
+# with zipfile.ZipFile('mytext.zip','w') as myzip:
+#     myzip.write('a.txt')
+#     myzip.write('b.txt')
+#     myzip.write('c.txt')
+# #해제하기
+# with zipfile.ZipFile('mytest.zip') as myzip:
+#     myzip.extractall()
+#     myzip.extract('a.txt') ← 파일이 하나인 경우
+
+#파일을 압축하고 싶은 경우
+# with zipfile.Zipfile('mytext.zip','w', compression=zipfile.ZIP_LZMA,compresslevel=9) as my zip:
+
+#compression의 종류
+# ZIP_STORED - 압축하지 않고 파일을 Zip으로만 묶는다. 속도가 빠르다.
+# ZIP_DEFLATED - 일반적인 ZIP 압축으로 속도가 빠르고 압축률은 낮다. (호환성이 좋다.)
+# ZIP_BZIP2 - bzip2 압축으로 압축률이 높고 속도가 느리다.
+# ZIP_LZMA - lzma 압축으로 압축률이 높고 속도가 느리다. (7zip과 동일한 알고리즘으로 알려져 있다.)
+#compressionlevel은 압축 수준을 의미하는 숫자값으로 1~9를 사용하며, 1은 속도가 빠르고 압축률이 낮으며 올라갈수록
+#속도는 가장 느리고 압출률이 높다
+
+#tempfile
+# 파일을 임시로 만들어서 사용할 때 유용한 모듈
+# tempfile.mkstemp()는 중복되지 않는 임시 파일의 이름을 무작위로 만들어서 리턴한다.
+# tempfile.TemporaryFile()은 임시 저장 공간으로 사용할 파일 객체를 리턴한다. 기본적으로 바이너리 쓰기 모드(wb)를 갖는다.
+# f.close()가 호출되면 이 파일은 자동으로 삭제된다.
+import tempfile
+filename = tempfile.mkstemp()
+print(filename)
+#>>>(3,  'C:\\Users\\Cloudike\\AppData\\Local\\Temp\\tmp49fopqw3')
+
+f= tempfile.TemporaryFile()
+print(f)
+f.close()
+#>>><tempfile._TemporaryFileWrapper object at 0x00000257BA8EA5F0>
+
+#taceback
+# 프로그램 실행 중 발생한 오류를 추적하고 할 때 사용하는 모듈
+import traceback
+
+def a():
+    return 1/0
+def b():
+    a()
+
+def main():
+    try :
+        b()
+    except:
+        print("오류가 발생했습니다.")
+        print(traceback.format_exc()) #format.exc()는 오류 추적 결과를 문자열로 리턴하는 함수
+main()
+
+#>>> 오류가 발생했습니다.
+# Traceback (most recent call last):
+#   File "C:\Users\Cloudike\PycharmProjects\codingBasic_python\Chapter3\Libarary.py", line 321, in main
+#     b()
+#   File "C:\Users\Cloudike\PycharmProjects\codingBasic_python\Chapter3\Libarary.py", line 317, in b
+#     a()
+#   File "C:\Users\Cloudike\PycharmProjects\codingBasic_python\Chapter3\Libarary.py", line 315, in a
+#     return 1/0
+# ZeroDivisionError: division by zero
+#오류 추적을 통해서 ZeroDivisionError가 발생했음을 로그를 통해 알 수 있다.
+
+#json
