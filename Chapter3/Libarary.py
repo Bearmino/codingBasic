@@ -336,4 +336,20 @@ main()
 # ZeroDivisionError: division by zero
 #오류 추적을 통해서 ZeroDivisionError가 발생했음을 로그를 통해 알 수 있다.
 
-#json
+#urllib
+# urllib는 URL을 읽고 분석할 때 사용하는 모듈
+import urllib.request
+
+def get_wikidocs(page):
+    resource = 'http://wikidocs.net/{}'.format(page)
+    with urllib.request.urlopen(resource) as s:
+        with open('wikidocs_%s.html'%page,'wb') as f:
+            f.write(s.read())
+#>>>get_wikidocs(page)함수로 위키독스 페이지의 번호를 입력받아 해당 페이지의 리소스 내용을 파일로 저장하는 함수코드
+#urllib.request.urlopen(resource,context=context)로 s객체를 생성하여, s.read()로 리소스 내용 전체를 읽어 이를 저장
+
+#webbrowser
+# 파이썬 프로그램에서 browser를 호출할 때 사용하는 모듈
+import webbrowser
+webbrowser.open_new('http://python.org')
+webbrowser.open('http://naver.com') #이미 열린 브라우저로 다른 사이트를 열고 싶을떄는 open만 사용
