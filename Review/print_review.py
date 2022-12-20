@@ -27,4 +27,5 @@ print("naver","kakao","samsung","sk", sep=";")
 # print("First");print("Second")
 print("First",end=" ");print("Second")
 
-# 10.
+# 10. 5/3의 연산 결과를 출력하여 보세요.
+print(5/3)

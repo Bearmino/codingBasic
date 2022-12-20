@@ -218,13 +218,13 @@ print(glob.glob("c:/doit/foo*"))
 # 객체의 형태를 그대로 유지하면서 파일에 저장하고 불러올 수 있게 하는 모듈
 # pickle 모듈의 dump함수를 사용하여 딕셔너리 객체인 data를 그대로 파일에 저장
 import pickle
-f = open("test.txt",'wb')
+f = open("test.txt", 'wb')
 data = {1:'python',2:'you need'}
 pickle.dump(data,f)
 f.close()
 # pickle.dump로 저장한 파일을 pckle.load를 사용해서 원래 있던 딕셔너리 객체(data)상태 그대로 불어오는 상황
 import pickle
-f = open("test.txt",'rb')
+f = open("test.txt", 'rb')
 data = pickle.load(f)
 print(data)
 

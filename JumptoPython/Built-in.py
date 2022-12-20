@@ -324,7 +324,7 @@ print(type("abc"))
 #>>><class 'str'>
 print(type([ ]))
 #>>><class 'list'>
-print(open("test",'w'))
+print(open("test", 'w'))
 #>>><class 'io.TextIOWrapper'>
 
 #zip
