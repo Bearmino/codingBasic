@@ -353,3 +353,5 @@ def get_wikidocs(page):
 import webbrowser
 webbrowser.open_new('http://python.org')
 webbrowser.open('http://naver.com') #이미 열린 브라우저로 다른 사이트를 열고 싶을떄는 open만 사용
+
+
