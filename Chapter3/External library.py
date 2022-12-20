@@ -29,13 +29,7 @@ test_data = [(fake.name(),fake.address()) for i in range(30)]
 print(test_data)
 #>>>[('김지후', '강원도 서산시 개포가'), ('성춘자', '경기도 화성시 개포로'), .....
 
-
-
-
-
-
-
-#faker
+#faker 함수모음
 # fake.name()	    |   이름
 # fake.address()	|   주소
 # fake.postcode()	| 우편 번호
@@ -52,5 +46,36 @@ print(test_data)
 
 #sympy
 # 방정식 기호(symbol)를 사용하게 해주는 외부 라이브러리이다.
+# 예시문제) 시윤이는 가진 돈의 2/5로 학용품을 샀다고 한다. 이때 학용품을 사는데 쓴 돈이 1,760원이라면 남은 돈은??
+from fractions import Fraction #파이썬에서 유리수 연산을 정확하게 하려면 frations.Fraction을 사용해야한다.
+import sympy
 
+#가지고 있던 돈을 x라고 함, x,y=sympy.symbols('x y')로 표현할 수 있다.
+x=sympy.symbols("x")
+
+#가지고 있던 돈의 2/5가 1760원이므로 방정식은 x*(2/5)=1760이다.
+f=sympy.Eq(x*Fraction('2/5'), 1760)
+
+#방정식을 만족하는 값(result)를 구한다.
+result = sympy.solve(f)
+
+#남은 돈은 다음과 같이 가지고 있던 돈에서 1760을 빼야함
+remains = result[0]-1760
+
+print('남은 돈은 {}원 입니다.'.format(remains))
+
+#sympy활용
+# x²=1과 같은 이차방정식의 해를 구해보자
+import sympy
+x = sympy.symbols("x")
+f = sympy.Eq(x**2,1)
+print(sympy.solve(f))
+#>>>[-1,1]
+
+# 연립방정식의 해를 구하는것도 가능하다.
+x,y=sympy.symbols('x y')
+r1 = sympy.Eq(x+y,10)
+r2 = sympy.Eq(x-y,4)
+print(sympy.solve([r1,r2]))
+#결과값이 2개 이상이라면 리스트가 아닌 딕셔너리임을 주의하자.
 
