@@ -124,16 +124,28 @@ print(pat.sub("\g<1>-*******",data))
 #       ab?c  |	   abc	  |      Yes	 |    "b"가 1번 사용되어 매치
 #       ab?c  |	    ac	  |      Yes	 |    "b"가 0번 사용되어 매치
 #
-# 파이썬에서 정규 표현식을
+# 파이썬에서 정규 표현식을 지원하는 re모듈
+# 정규 표현식을 지원하기 위해 re(regular expression)모듈을 제공한다.(파이썬 설치시 자동 설치)
+# Sample)
+# import re
+# p=re.compile('ab*')
+# re.complie을 사용하여 정규 표현식(ab*)을 컴파일 한다. re.complie의 결과로 돌려주는 객체p(컴파일된 패턴 객체)를
+# 사용하여 그 이후의 작업 수행
 #
+# 정규식을 이용한 문자열 검색
+#   Method	|               목적
+# match()	|   문자열의 처음부터 정규식과 매치되는지 조사한다.
+# search()	|   문자열 전체를 검색하여 정규식과 매치되는지 조사한다.
+# findall()	|   정규식과 매치되는 모든 문자열(substring)을 리스트로 리턴한다.
+# finditer()|  	정규식과 매치되는 모든 문자열(substring)을 반복 가능한 객체로 리턴한다.
 #
-#
-#
-#
-#
-#
+import re
+p = re.compile('[a-z]+')
 
-
+# match
+# 정규식의 검색 결과로 리턴된 객체를 말함
+m = p.match("python")
+print(m)
 
 
 
