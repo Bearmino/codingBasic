@@ -143,10 +143,63 @@ import re
 p = re.compile('[a-z]+')
 
 # match
-# 정규식의 검색 결과로 리턴된 객체를 말함
+# 정규식의 검색 결과로 리턴된 객체를 말함(match 또는 None을 리턴함)
 m = p.match("python")
 print(m)
+#>>> <re.Match object; span=(0, 6), match='python'>
+#"python"문자열은 [a-z]+정규식에 부합되어 match객체를 돌려준다.
 
+m = p.match("3 python")
+print(m)
+#"3 python"문자열의 첫 문자이 3이 정규식[a-z]+에 부합되지 않아서 None을 돌려준다.
 
+p = re.compile('here')
+m = p.match('string goes here')
+if m:
+    print('Match found: ',m.group())
+else:
+    print('No match')
 
+# match 객체의 메서드
+#  메서드  |	        목적
+# group() |	매치된 문자열을 돌려준다.
+# start() |	매치된 문자열의 시작 위치를 돌려준다.
+# end()	  |  매치된 문자열의 끝 위치를 돌려준다.
+# span()  |	매치된 문자열의 (시작, 끝)에 해당하는 튜플을 돌려준다.
+
+p = re.compile('[a-z]+')
+m = p.match("python")
+print(m.group())
+# >>> python
+print(m.start())
+# >>> 0
+print(m.end())
+# >>> 6
+print(m.span())
+# >>> (0,6)
+
+# search
+p = re.compile('[a-z]+')
+m = p.search("3 python")
+print(m)
+# >>> <re.Match object; span=(2, 8), match='python'>
+# "3 python" 문자열의 첫 번째 문자는 "3"이지만 search는 문자열의 처음부터 검색하는 것이 아닌 문자열
+# 검색하기 때문에 "3"이후의 "python"문자열과 매치된다.
+
+# findall
+result = p.findall("life is too short")
+print(result)
+# >>> ['life', 'is', 'too', 'short']
+# findall은 패턴([a-z]+)과 매치되는 모든 값을 찾아 리스트로 리턴한다.
+
+# finditer
+# findall과 동일하지만 그 결과로 반복 가능한 객체(iterator object)를 리턴한다.
+result = p.finditer("life is to short")
+print(result)
+# >>> <callable_iterator object at 0x0000020CAF02CD00>
+for i in result: print(i)
+# >>><re.Match object; span=(0, 4), match='life'>
+# <re.Match object; span=(5, 7), match='is'>
+# <re.Match object; span=(8, 10), match='to'>
+# <re.Match object; span=(11, 16), match='short'>
 
