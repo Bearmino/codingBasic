@@ -147,11 +147,11 @@ p = re.compile('[a-z]+')
 m = p.match("python")
 print(m)
 #>>> <re.Match object; span=(0, 6), match='python'>
-#"python"문자열은 [a-z]+정규식에 부합되어 match객체를 돌려준다.
+# "python"문자열은 [a-z]+정규식에 부합되어 match객체를 돌려준다.
 
 m = p.match("3 python")
 print(m)
-#"3 python"문자열의 첫 문자이 3이 정규식[a-z]+에 부합되지 않아서 None을 돌려준다.
+# "3 python"문자열의 첫 문자이 3이 정규식[a-z]+에 부합되지 않아서 None을 돌려준다.
 
 p = re.compile('here')
 m = p.match('string goes here')
@@ -203,3 +203,30 @@ for i in result: print(i)
 # <re.Match object; span=(8, 10), match='to'>
 # <re.Match object; span=(11, 16), match='short'>
 
+# 모듈 단위로 수행하기
+# 지금까지 re.compile을 사용하여 컴파일된 패턴 객체로 그 이후 작업을 수행했다.
+# re모듈은 이것을 보다 축약한 형태로 사용할 수 있는 방법이 있다.
+p = re.compile('[a-z]+')
+m = p.match("python")
+# 위 코드를 축약하면...
+m = re.match('[a-z]+',"python")
+print(m)
+
+# 컴파일 옵션
+# 정규식을 컴파일 시 다음 옵션을 사용할 수 있다.
+# DOTALL(S) - . 이 줄바꿈 문자를 포함하여 모든 문자와 매치할 수 있도록 한다.
+# IGNORECASE(I) - 대소문자에 관계없이 매치할 수 있도록 한다.
+# MULTILINE(M) - 여러줄과 매치할 수 있도록 한다. (^, $ 메타문자의 사용과 관계가 있는 옵션이다)
+# VERBOSE(X) - verbose 모드를 사용할 수 있도록 한다. (정규식을 보기 편하게 만들수 있고 주석등을 사용할 수 있게된다.)
+
+# DOTALL,S
+# .메타 문자는 줄바꿈 문자(\n)를 제외한 모든 문자와 매치되는 규칙이 존재
+# \n문자도 포함하여 매치하고 싶다면 re.DOTALL 또는 re.s옵션을 사용해 정규식을 컴파일하면 된다.
+p = re.compile('a.b')
+m = p.match('a\nb')
+print(m)
+# >>> None
+p = re.compile('a.b',re.DOTALL)
+m = p.match('a\nb')
+print(m)
+# >>> <re.Match object; span=(0, 3), match='a\nb'>
