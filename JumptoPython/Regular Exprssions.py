@@ -230,3 +230,40 @@ p = re.compile('a.b',re.DOTALL)
 m = p.match('a\nb')
 print(m)
 # >>> <re.Match object; span=(0, 3), match='a\nb'>
+
+# IGNORECASE,I
+# re.IGNORECASE 또는 re.I 옵션은 대소문자 구별 없이 매치를 수행할 떄 사용하는 옵션이다.
+p = re.compile('[a-z]+',re.IGNORECASE)
+print(p.match('python'))
+# >>> <re.Match object; span=(0, 6), match='python'>
+print(p.match('PYTHON'))
+# >>> <re.Match object; span=(0, 6), match='PYTHON'>
+
+# MULTILINE,M
+# re.MULTILINE 또는 re.M 옵션은 메타 문자인 ^,$와 연관된 옵션이다.
+p = re.compile("^python\s\w+")
+
+data = """python one
+life is too short
+python two
+you need python
+python tree"""
+
+print(p.findall(data))
+# >>> ['python one']
+# ^ 메타 문자에 의해 python이라는 문자열을 사용한 첫 번째 줄만 매치된 것이다.
+# 하지만 ^ 메타 문자를 문자열 전체의 처음이 아니라 각 라인의 처음으로 인식시키고 싶은 경우에 re.MULTILINE을 사용할 수 있다.
+p = re.compile("^python\s\w+",re.MULTILINE)
+
+data = """python one
+life is too short
+python two
+you need python
+python tree"""
+
+print(p.findall(data))
+# >>> ['python one', 'python two', 'python tree']
+# 즉, re.MULTILINE옵션은 ^,$ 메타 문자를 문자열의 각 줄마다 적용해 주는 것이다.
+
+# VERBOSE,X
+#
