@@ -24,5 +24,55 @@ print(phone_number2)
 # 6. 하기 url에 저장된 웹 페이지 주소에서 도메인만 출력하세요.
 url = "https://sharebook.kr"
 url_domain = url.split(".") # split을 통해서 .을 기준으로 문자를 나눈다.
+print(url_domain) # 리스트로 정렬
 print(url_domain[-1])
+
+# 7. 아래 문자열에서 소문자 'a'를 대문자 'A'로 변경하세요.
+str = 'asbcdfe21a34a545a3'
+str_up = str.replace('a','A')
+print(str_up)
+
+# 문자열 합치기,곱하기의 실행 결과를 예상해보기.
+a="3"
+b="4"
+print(a+b)
+# >>>34
+print(a*3)
+# >>>333 문자열에 대한 *는 문자열의 반복을 의미
+
+# 8. 하기의 변수 문자열을 더하기와 문자열 곱하기를 활용하여 예의 문장처럼 출력하세요.
+# 변수=t1,t2
+# 실행 예 = python java python java python java python java
+t1 = "python"
+t2 = "java"
+t3 = t1 + " " + t2 + " "
+print(t3*4)
+
+# 9. 하기와 같이 문자열과 정수가 바인딩 되어 있을때 %formatting을 사용해서 당음과 같이 출력해보세요.
+# 이름: 김민수 나이: 10
+# 이름: 이철희 나이: 13
+name1="김민수"
+age1=10
+name2="이철희"
+age2=13
+
+print("이름: %s 나이: %d"%(name1,age1))
+print("이름: %s 나이: %d"%(name2,age2))
+
+# 10. 문자열의 format()메서드를 사용해서 9번 문제를 다시 풀어보세요.
+print("이름: {} 나이: {}".format(name1,age1))
+print("이름: {} 나이: {}".format(name2,age2))
+
+# 11. 파이썬 3.6부터 지원하는 f-string을 사용해서 9번 문제를 다시 풀어보세요.
+print(f'이름: {name1} 나이: {age1} ')
+print(f'이름: {name2} 나이: {age2} ')
+
+# 12. 하기의 숫자에서 컴마를 제거한 후 이를 정수타입으로 변환하세요.
+# 숫자 = 5,148,579,618
+num_str = "5,148,579,618"
+num_str = num_str.replace(",","")
+int(num_str)
+print(num_str)
+
+# 13. 학기의 문자열에서 '2020/
 
