@@ -74,5 +74,6 @@ num_str = num_str.replace(",","")
 int(num_str)
 print(num_str)
 
-# 13. 학기의 문자열에서 '2020/
-
+# 13. 학기의 문자열에서 2020/03만 출력하세요.
+str = "2020/03(E) (IFRS연결)"
+print(str[:7])
