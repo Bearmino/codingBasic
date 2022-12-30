@@ -74,6 +74,11 @@ num_str = num_str.replace(",","")
 int(num_str)
 print(num_str)
 
-# 13. 학기의 문자열에서 2020/03만 출력하세요.
+# 13. 하기의 문자열에서 2020/03만 출력하세요.
 str = "2020/03(E) (IFRS연결)"
 print(str[:7])
+
+# 14. 하기의 문자열에서 좌우의 공백이 있을때 이를 제거해보세요.
+str = "  삼성전자  "
+str1 = str.strip()
+print(str1)
