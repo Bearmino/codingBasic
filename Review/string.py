@@ -83,4 +83,30 @@ str = "  삼성전자  "
 str1 = str.strip()
 print(str1)
 
-# 15.
+# 15. 하기의 문자열이 있을 때 이를 대문자로 변경해보세요.
+ticker = "btc_krw"
+ticker1 = ticker.upper()
+print(ticker1)
+ticker2 = ticker1.lower()
+print(ticker2) # 다시 소문자로
+
+# 16. 문자열 'hello'를 'Hello'로 변경해보세요.
+str = 'hello'
+str1 = str.capitalize()
+print(str1)
+
+# 17. 하기와 같이 문자열이 있을 때 btc와 krw로 나눠보세요.
+ticker = "btc_krw"
+ticker1=ticker.split("_")
+print(ticker1)
+
+# 18. 하기와 같이 날짜를 표현하는 문자열이 있을 때 연도, 월, 일로 나눠보세요.
+date = "2022-01-04"
+date1 = date.split("-")
+print(date1)
+
+# 19. 하기 문자열에서 오른쪽 공백을 제거해보세요.
+data = "0147451     "
+data1 = data.rstrip(" ")
+print(data1)
+
