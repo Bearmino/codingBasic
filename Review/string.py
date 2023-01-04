@@ -82,3 +82,5 @@ print(str[:7])
 str = "  삼성전자  "
 str1 = str.strip()
 print(str1)
+
+# 15.
