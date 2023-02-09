@@ -45,3 +45,21 @@ print(len(cook))
 numbers = [1,2,3,4,5]
 print(sum(numbers)/len(numbers))
 
+# 11. 하기의 price 변수에는 날짜와 종가 정보가 저장돼 있다. 날짜 정보를 제외하고 가격 정보만을 출력하자.
+price = ['20180728',100,130,140,150,160,170]
+print(price[1:])
+
+# 12. 하기의 nums 변수에서 슬라이싱을 통해서 홀수만 출력해보자.
+nums = [1,2,3,4,5,6,7,8,10]
+print(nums[::2])
+print(nums[1::2])
+
+# 13. 슬라이싱을 사용해서 리스트의 숫자를 역방향으로 출력해보자.
+nums = [1,2,3,4,5]
+print(nums[::-1])
+
+# 14. 하기의 interest 변수에 있는 리스트 자료에서 "삼성전자", "naver"만 나오게 출력해보자.
+interest = ['삼성전자','현대','google','naver']
+print(interest[0],interest[3])
+
+# 15.
