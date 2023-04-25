@@ -13,3 +13,6 @@ print(shor_text_place) # Life is...중략..., placeholder 인자를 설정하면
 
 long_text = 'Winners embrace hard work. They love the discipline of it, the trade-off theyre making to win. ' \
             'Losers, on the other hand, see it as punishment. And that’s the difference.'
+shor_text = textwrap.wrap(long_text, width=50)
+print(shor_text)
+print('\n'.join(shor_text))
