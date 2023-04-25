@@ -23,3 +23,8 @@ print('\n'.join(result_text))
 # win. Losers, on the other hand, see it as
 # punishment. And that’s the difference.
 # join() 함수로 문자열 사이에 줄 바꿈 문자(\n)를 넣어 하나로 합친 다음 출력한다.
+print(textwrap.fill(long_text,width=70))
+# Winners embrace hard work. They love the discipline of it, the trade-
+# off theyre making to win. Losers, on the other hand, see it as
+# punishment. And that’s the difference.
+# textwrap.fill() 함수를 사용하면 이 과정을 한 번으로 줄일 수 있으며, 각 줄의 길이가 70을 넘지 않는다.
