@@ -266,4 +266,16 @@ print(p.findall(data))
 # 즉, re.MULTILINE옵션은 ^,$ 메타 문자를 문자열의 각 줄마다 적용해 주는 것이다.
 
 # VERBOSE,X
-#
+charref = re.compile(r'&[#](0[0-7]+|[0-9]+|x[0-9a-fA-F]+);')
+charref = re.compile(r"""
+ &[#]                # Start of a numeric entity reference
+ (
+     0[0-7]+         # Octal form
+   | [0-9]+          # Decimal form
+   | x[0-9a-fA-F]+   # Hexadecimal form
+ )
+ ;                   # Trailing semicolon
+""", re.VERBOSE)
+# 첫번째와 두번째 정규식을 비교하면 컴파일된 패턴 객체인 charref는 모두 동일한 역할을 한다.
+# 다만, re.VERBOSE 옵션을 사용하면 어려운 정규식을 주석 또는 줄 단위로 구분할 수 있게 해주며, 주석을 통해서 훨씬 가독성을 높인다.
+# whitespace는 컴파일할 때 제거된다.(단. []안에 사용 한 whitespace는 제외), 줄 단위로 #기호를 사용하여 주석문 작성 가능
